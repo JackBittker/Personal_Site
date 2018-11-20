@@ -1,0 +1,55 @@
+.page {
+  display: flex;
+  justify-content: space-around;
+  background-color:black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+}
+.team_name1 input {
+  margin: auto;
+}
+
+.team_name {
+  display: flex; 
+}
+
+.score2 {
+  margin: auto;
+  font-size: 400px;
+  background-color: blue;
+  text-align: center;
+  padding: 20px;
+  width: 360px;
+}
+
+.score {
+  margin: auto;
+  font-size: 400px;
+  background-color: red;
+  text-align: center;
+  padding: 20px;
+  width: 360px;
+}
+html{
+    background-color: beige;
+}
+
+.backarrow{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    padding: 10px
+}
