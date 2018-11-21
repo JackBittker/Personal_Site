@@ -40,14 +40,14 @@ point.prototype.update = function () {
         if (points[k] === this) continue;
 
         var d = Math.sqrt(Math.pow(this.x - points[k].x, 2) + Math.pow(this.y - points[k].y, 2));
-        if (d < 5) {
+        if (d < 10) {
             ctx.lineWidth = .15;
             ctx.beginPath();
             ctx.moveTo(this.x, this.y);
             ctx.lineTo(points[k].x, points[k].y);
             ctx.stroke();
         }
-        if (d < 5) {
+        if (d < 15) {
             ctx.lineWidth = .45;
             ctx.beginPath();
             ctx.moveTo(this.x, this.y);

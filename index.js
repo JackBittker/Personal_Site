@@ -25,10 +25,10 @@ var green = Math.floor(Math.random() * 255)
 var blue = Math.floor(Math.random() * 255)
 var score = 0;
 var bricks = [];
-for (var c = 0; c < brickColumnCount; c++) {
-    bricks[c] = [];
+for (var col = 0; col < brickColumnCount; col++) {
+    bricks[col] = [];
     for (var r = 0; r < brickRowCount; r++) {
-        bricks[c][r] = {
+        bricks[col][r] = {
             x: 0,
             y: 0,
             status: 1
@@ -67,9 +67,9 @@ function keyUpHandler(e) {
 }
 
 function collisionDetection() {
-    for (var c = 0; c < brickColumnCount; c++) {
+    for (var col = 0; col < brickColumnCount; col++) {
         for (var r = 0; r < brickRowCount; r++) {
-            var b = bricks[c][r];
+            var b = bricks[col][r];
             if (b.status == 1) {
                 if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
                     dy = -dy;
@@ -101,13 +101,13 @@ function collisionDetection() {
     }
 
     function drawBricks() {
-        for (var c = 0; c < brickColumnCount; c++) {
+        for (var col = 0; col < brickColumnCount; col++) {
             for (var r = 0; r < brickRowCount; r++) {
-                if (bricks[c][r].status == 1) {
+                if (bricks[col][r].status == 1) {
                     var brickX = (r * (brickWidth + brickPadding)) + brickOffsetLeft;
-                    var brickY = (c * (brickHeight + brickPadding)) + brickOffsetTop;
-                    bricks[c][r].x = brickX;
-                    bricks[c][r].y = brickY;
+                    var brickY = (col * (brickHeight + brickPadding)) + brickOffsetTop;
+                    bricks[col][r].x = brickX;
+                    bricks[col][r].y = brickY;
                     ct.beginPath();
                     ct.rect(brickX, brickY, brickWidth, brickHeight);
                     ct.fillStyle = "#000000";
@@ -125,7 +125,8 @@ function collisionDetection() {
     }
 
     function draw() {
-        ct.clearRect(0, 0, canvas.width, canvas.height);
+        ct.fillStyle="rgba(173,216,230,.08)"
+        ct.fillRect(0,0,canvas.width,canvas.height);
         drawBricks();
         drawBall();
         drawPaddle();
