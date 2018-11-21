@@ -11,10 +11,10 @@ var paddleWidth = 75;
 var paddleX = (canvas.width - paddleWidth) / 2;
 var rightPressed = false;
 var leftPressed = false;
-var brickRowCount = 5;
-var brickColumnCount = 3;
-var brickWidth = 75;
-var brickHeight = 20;
+var brickRowCount = 9;
+var brickColumnCount = 6;
+var brickWidth = 37.5;
+var brickHeight = 10;
 var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
@@ -125,7 +125,7 @@ function collisionDetection() {
     }
 
     function draw() {
-        ct.fillStyle="rgba(173,216,230,.08)"
+        ct.fillStyle="rgba(173,216,230,.09)"
         ct.fillRect(0,0,canvas.width,canvas.height);
         drawBricks();
         drawBall();
@@ -148,7 +148,7 @@ function collisionDetection() {
       return;
     }
         }
-        if (tic % 10 == 0) {
+        if (tic % 8 == 0) {
             red = Math.floor(Math.random() * 255);
             green = Math.floor(Math.random() * 255);
             blue = Math.floor(Math.random() * 255);
